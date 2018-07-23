@@ -1,0 +1,24 @@
+<manifest package="com.mixpush.client"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <permission
+        android:name="${PACKAGE_NAME}.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="${PACKAGE_NAME}.permission.JPUSH_MESSAGE"/>
+
+    <application>
+        <receiver
+            android:name=".jiguang.JiGuangPushMessageReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION"/> <!--Required  用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/> <!--Required  用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/> <!--Required  用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/> <!--Required  用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK"/> <!--Optional 用户接受Rich Push Javascript 回调函数的intent-->
+                <action android:name="cn.jpush.android.intent.CONNECTION"/><!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="${PACKAGE_NAME}"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

@@ -9,10 +9,14 @@ import android.preference.PreferenceManager;
 import com.mixpush.client.core.MixPushClient;
 import com.mixpush.client.core.MixPushManager;
 import com.mixpush.client.getui.GeTuiManager;
+import com.mixpush.client.huawei.HuaWeiPushManager;
+import com.mixpush.client.jiguang.JiGuangPushManager;
 import com.mixpush.client.meizu.MeizuPushManager;
 import com.mixpush.client.mipush.MiPushManager;
 
 import java.util.Map;
+
+import cn.jpush.android.api.JPushInterface;
 
 /**
  * Created by Wiki on 2017/6/1.
@@ -30,9 +34,12 @@ public class DemoApplication extends Application {
         initPush();
     }
     private void initPush() {
+        JPushInterface.setDebugMode(true);//正式版的时候设置false，关闭调试
         MixPushClient.addPushManager(new MeizuPushManager(MEIZU_APP_ID,MEIZU_APP_KEY));
         MixPushClient.addPushManager(new MiPushManager(MIPUSH_APP_ID, MIPUSH_APP_KEY));
         MixPushClient.addPushManager(new GeTuiManager());
+        MixPushClient.addPushManager(new JiGuangPushManager());
+        MixPushClient.addPushManager(new HuaWeiPushManager());
         MixPushClient.setPushIntentService(PushIntentService.class);
         MixPushClient.setSelector(new MixPushClient.Selector() {
             @Override
@@ -46,17 +53,15 @@ public class DemoApplication extends Application {
         MixPushClient.setPushIntentService(PushIntentService.class);
 
         // start - 下面代码在正式使用不用设置，这里仅仅用于测试
-        String usePushName = getUsePushName(this);
-        if (usePushName != null) {
-            MixPushClient.setUsePushName(usePushName);
-        }
+//        String usePushName = getUsePushName(this);
+//        if (usePushName != null) {
+//            MixPushClient.setUsePushName(usePushName);
+//        }
         // - end
-
-
         // 注册推送
-        MixPushClient.registerPush(this);
+        MixPushClient.registerPush(getApplicationContext());
         // 绑定别名，一般是填写用户的ID，便于定向推送
-        MixPushClient.setAlias(this, getUserId());
+        MixPushClient.setAlias(this, "103");
         // 设置标签
         MixPushClient.setTags(this,"广东");
     }

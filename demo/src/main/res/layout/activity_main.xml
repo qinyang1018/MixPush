@@ -20,7 +20,7 @@
             android:id="@+id/text_use_push"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="当前推送平台：小米推送\n状态：开启"
+            tools:text="当前推送平台：小米推送\n状态：开启"
             android:textSize="18sp" />
 
         <Button

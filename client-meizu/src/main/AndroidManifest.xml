@@ -29,7 +29,6 @@
                 <!-- 兼容低版本Flyme3推送服务配置 -->
                 <action android:name="com.meizu.c2dm.intent.REGISTRATION" />
                 <action android:name="com.meizu.c2dm.intent.RECEIVE" />
-
                 <category android:name="${PACKAGE_NAME}"/>
             </intent-filter>
 

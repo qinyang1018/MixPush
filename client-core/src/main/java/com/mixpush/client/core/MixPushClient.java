@@ -1,5 +1,6 @@
 package com.mixpush.client.core;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -87,12 +88,16 @@ public class MixPushClient {
 
     public static class Selector {
         public String select(Map<String, MixPushManager> pushAdapterMap, String brand) {
-            if (pushAdapterMap.containsKey("meizuPush") && brand.equalsIgnoreCase("meizu")) {
-                return "meizuPush";
-            } else if (pushAdapterMap.containsKey("mipush") && brand.equalsIgnoreCase("xiaomi")) {
-                return "mipush";
-            } else if (pushAdapterMap.containsKey("getui")) {
-                return "getui";
+            if (pushAdapterMap.containsKey(Contans.NAME_MEIZU) && brand.equalsIgnoreCase("meizu")) {
+                return Contans.NAME_MEIZU;
+            } else if (pushAdapterMap.containsKey(Contans.NAME_MI) && brand.equalsIgnoreCase("xiaomi")) {
+                return Contans.NAME_MI;
+            } else if (pushAdapterMap.containsKey(Contans.NAME_HUWEI) && brand.equalsIgnoreCase("huawei")) {
+                return Contans.NAME_HUWEI;
+            } else if (pushAdapterMap.containsKey(Contans.NAME_GETUI)) {
+                return Contans.NAME_GETUI;
+            } else if (pushAdapterMap.containsKey(Contans.NAME_JIGUANG)) {
+                return Contans.NAME_JIGUANG;
             }
             return null;
         }

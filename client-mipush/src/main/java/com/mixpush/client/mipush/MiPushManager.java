@@ -2,6 +2,7 @@ package com.mixpush.client.mipush;
 
 import android.content.Context;
 
+import com.mixpush.client.core.Contans;
 import com.mixpush.client.core.MixMessageProvider;
 import com.mixpush.client.core.MixPushManager;
 import com.xiaomi.mipush.sdk.MiPushClient;
@@ -13,7 +14,7 @@ import java.util.List;
  */
 
 public class MiPushManager implements MixPushManager {
-    public static final String NAME = "mipush";
+    public static final String NAME = Contans.NAME_MI;
     public static MixMessageProvider sMixMessageProvider;
     private String appId;
     private String appKey;
@@ -51,7 +52,7 @@ public class MiPushManager implements MixPushManager {
 
     @Override
     public void setTags(Context context, String... tags) {
-        for (String tag : tags){
+        for (String tag : tags) {
             MiPushClient.subscribe(context, tag, null);
         }
 
@@ -67,7 +68,7 @@ public class MiPushManager implements MixPushManager {
 
     @Override
     public String getName() {
-        return NAME;
+        return Contans.NAME_MI;
     }
 
     @Override

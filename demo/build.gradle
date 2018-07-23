@@ -1,21 +1,28 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
     defaultConfig {
         applicationId "com.mixpush.demo"
-        minSdkVersion 15
-        targetSdkVersion 24
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         manifestPlaceholders = [
+                PACKAGE_NAME: "com.mixpush.demo",
                 GETUI_APP_ID : "51xb25cmJx9I28wet1Rtd5",
                 GETUI_APP_KEY : "Wq0MtiYBdO7YwpTLbR8iI3",
                 GETUI_APP_SECRET : "nhdQScPkIyAu1MSoL7qSu6",
-                PACKAGE_NAME: "com.mixpush.demo"
+
+                JPUSH_PKGNAME: "com.mixpush.demo",
+                JPUSH_APPKEY : "ad82cb333cafb6108c7744f9", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+
+                HUAWEI_APPID:"100352131"
         ]
     }
     buildTypes {
@@ -43,6 +50,8 @@ dependencies {
     compile project(':client-mipush')
     compile project(':client-getui')
     compile project(':client-meizu')
+    compile project(':client-jiguang')
+    compile project(':client-huawei')
 
 //    compile 'com.github.joyrun.MixPush:client-core:1.1.0'
 //    compile 'com.github.joyrun.MixPush:client-mipush:1.1.0'

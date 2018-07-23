@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.igexin.sdk.PushManager;
 import com.igexin.sdk.Tag;
+import com.mixpush.client.core.Contans;
 import com.mixpush.client.core.MixMessageProvider;
 import com.mixpush.client.core.MixPushManager;
 
@@ -57,7 +58,7 @@ public class GeTuiManager implements MixPushManager {
 
     @Override
     public String getName() {
-        return NAME;
+        return Contans.NAME_GETUI;
     }
 
     @Override

@@ -27,7 +27,7 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         text = (TextView) findViewById(R.id.text);
         TextView text_use_push = (TextView) findViewById(R.id.text_use_push);
-        text_use_push.setText("当前推送平台："+MixPushClient.getUsePushName());
+        text_use_push.setText("当前推送平台：" + MixPushClient.getUsePushName());
         IntentFilter filter = new IntentFilter();
         filter.addAction(MixPushMessageReceiver.RECEIVE_THROUGH_MESSAGE);
         filter.addAction(MixPushMessageReceiver.NOTIFICATION_ARRIVED);
@@ -49,16 +49,20 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
             public void setTag(String tag) {
                 // ignore
             }
+
             @Override
             public void log(String content, Throwable t) {
                 Log.d("mipush", content, t);
             }
+
             @Override
             public void log(String content) {
                 Log.d("mipush", content);
             }
         };
         Logger.setLogger(this, newLogger);
+
+
     }
 
     @Override
@@ -92,16 +96,16 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_switch_mipush:
-                DemoApplication.setUsePushName(this,MiPushManager.NAME);
+                DemoApplication.setUsePushName(this, MiPushManager.NAME);
                 break;
             case R.id.btn_switch_meizu:
-                DemoApplication.setUsePushName(this,MeizuPushManager.NAME);
+                DemoApplication.setUsePushName(this, MeizuPushManager.NAME);
                 break;
             case R.id.btn_switch_getui:
-                DemoApplication.setUsePushName(this,GeTuiManager.NAME);
+                DemoApplication.setUsePushName(this, GeTuiManager.NAME);
                 break;
             case R.id.btn_start:
-                MixPushClient.registerPush(getApplicationContext());
+                MixPushClient.registerPush(this);
                 break;
             case R.id.btn_close:
                 MixPushClient.unRegisterPush(getApplicationContext());

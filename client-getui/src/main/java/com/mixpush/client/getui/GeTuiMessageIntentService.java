@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.igexin.sdk.GTIntentService;
 import com.igexin.sdk.message.GTCmdMessage;
+import com.igexin.sdk.message.GTNotificationMessage;
 import com.igexin.sdk.message.GTTransmitMessage;
 import com.mixpush.client.core.MixPushMessage;
 
@@ -69,5 +70,15 @@ public class GeTuiMessageIntentService extends GTIntentService {
     @Override
     public void onReceiveCommandResult(Context context, GTCmdMessage cmdMessage) {
         Log.e(TAG, "onReceiveCommandResult -> " + "action = " + cmdMessage.getAction());
+    }
+
+    @Override
+    public void onNotificationMessageArrived(Context context, GTNotificationMessage gtNotificationMessage) {
+
+    }
+
+    @Override
+    public void onNotificationMessageClicked(Context context, GTNotificationMessage gtNotificationMessage) {
+
     }
 }

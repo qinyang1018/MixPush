@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MixPush.iml" filepath="$PROJECT_DIR$/MixPush.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MixPush.iml" filepath="$PROJECT_DIR$/MixPush.iml" />
       <module fileurl="file://$PROJECT_DIR$/client-core/client-core.iml" filepath="$PROJECT_DIR$/client-core/client-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/client-getui/client-getui.iml" filepath="$PROJECT_DIR$/client-getui/client-getui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client-huawei/client-huawei.iml" filepath="$PROJECT_DIR$/client-huawei/client-huawei.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client-jiguang/client-jiguang.iml" filepath="$PROJECT_DIR$/client-jiguang/client-jiguang.iml" />
       <module fileurl="file://$PROJECT_DIR$/client-meizu/client-meizu.iml" filepath="$PROJECT_DIR$/client-meizu/client-meizu.iml" />
       <module fileurl="file://$PROJECT_DIR$/client-mipush/client-mipush.iml" filepath="$PROJECT_DIR$/client-mipush/client-mipush.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />

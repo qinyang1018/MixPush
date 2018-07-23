@@ -15,11 +15,23 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven {url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"}
+        maven { url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/" }
         maven { url 'https://jitpack.io' }
+        maven { url 'http://developer.huawei.com/repo/' }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+ext {
+    // SDK And Tools
+    minSdkVersion = 16
+    targetSdkVersion = 24
+    compileSdkVersion = 24
+    buildToolsVersion = '25.0.2'
+
+}
+

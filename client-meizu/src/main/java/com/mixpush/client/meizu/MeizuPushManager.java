@@ -3,6 +3,7 @@ package com.mixpush.client.meizu;
 import android.content.Context;
 
 import com.meizu.cloud.pushsdk.PushManager;
+import com.mixpush.client.core.Contans;
 import com.mixpush.client.core.MixMessageProvider;
 import com.mixpush.client.core.MixPushManager;
 
@@ -12,7 +13,7 @@ import com.mixpush.client.core.MixPushManager;
  */
 
 public class MeizuPushManager implements MixPushManager {
-    public static final String NAME = "meizuPush";
+    public static final String NAME = Contans.NAME_MEIZU;
     public static MixMessageProvider sMixMessageProvider;
 
     private String appId;
@@ -61,7 +62,7 @@ public class MeizuPushManager implements MixPushManager {
 
     @Override
     public String getName() {
-        return NAME;
+        return Contans.NAME_MEIZU;
     }
 
     @Override
